@@ -46,4 +46,9 @@
   flex-wrap: wrap;
   display: flex;
 }
+
+.filter-btn {
+  cursor: pointer;
+  color: red;
+}
 /*# sourceMappingURL=food-app.9e4c6fd2.css.map */

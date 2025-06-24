@@ -18554,6 +18554,7 @@ const Body = ()=>{
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                     className: "filter-btn",
                     onClick: ()=>{
+                        //filter logic
                         const filteredList = listOfRestaurants.filter((res)=>res.info.avgRating > 4.3);
                         setlistOfRestaurants(filteredList);
                     },
@@ -18574,12 +18575,12 @@ const Body = ()=>{
                         resData: restaurant
                     }, index, false, {
                         fileName: "src/Components/Body.js",
-                        lineNumber: 22,
+                        lineNumber: 23,
                         columnNumber: 17
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/Components/Body.js",
-                lineNumber: 20,
+                lineNumber: 21,
                 columnNumber: 13
             }, undefined)
         ]

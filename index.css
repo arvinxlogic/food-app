@@ -47,3 +47,7 @@ margin: 5px;
     flex-wrap: wrap;
     display: flex;
 }
+.filter-btn{
+    cursor: pointer;
+    color: red;
+}
