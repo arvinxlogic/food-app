@@ -26,11 +26,13 @@
 
 .res-card {
     width: 200px;
+margin: 5px;
     padding: 5px;
 }
 
 .res-card:hover {
     cursor: pointer;
+
     border: 1px solid black;
 }
 
@@ -40,4 +42,8 @@
 
 .res-logo {
     width: 190px;
+}
+.res-container{
+    flex-wrap: wrap;
+    display: flex;
 }
