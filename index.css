@@ -15,12 +15,14 @@
 .nav-items>ul {
     display: flex;
     font-size: 24px;
+    cursor: pointer;
     list-style: none;
 
 }
 
 .nav-items>ul>li {
     padding: 10px;
+    cursor: pointer;
     margin: 10px;
 }
 

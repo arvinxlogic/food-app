@@ -1,13 +1,11 @@
+import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
-// import resList from '../utils/mockData';
-import { useState, useEffect, useContext } from "react";
-// import useOnlineStatus from "../utils/useOnlineStatus";
-// import UserContext from "../utils/UserContext";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
-  const [filteredRestaurants, setFilteredRestaurant] = useState([]);
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
@@ -21,24 +19,13 @@ const Body = () => {
 
     const json = await data.json();
 
-    setListOfRestaurants(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants || []
-    );
-    setFilteredRestaurant(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants || []
-    );
+    const restaurants = json?.data?.cards.find(
+      (c) => c?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    )?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+
+    setListOfRestaurants(restaurants || []);
+    setFilteredRestaurants(restaurants || []);
   };
-
-//   const onlineStatus = useOnlineStatus();
-//   const { loggedInUser, setUserName } = useContext(UserContext);
-
-//   if (onlineStatus === false) {
-//     return (
-//       <h1>
-//         Looks like you're offline!! Please check your internet connection;
-//       </h1>
-//     );
-//   }
 
   return filteredRestaurants.length === 0 ? (
     <Shimmer />
@@ -48,35 +35,49 @@ const Body = () => {
         <div className="search">
           <input
             type="text"
-            data-testid="searchInput"
-            value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
+            placeholder="Search"
+            value={searchText}
           />
           <button
+            className="search-btn"
             onClick={() => {
               const filtered = listOfRestaurants.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
-              setFilteredRestaurant(filtered);
+              setFilteredRestaurants(filtered);
             }}
           >
             Search
           </button>
         </div>
 
-        <div className="user-info">
-          <span>{loggedInUser}</span>
-          <button onClick={() => setUserName("Guest")}>Logout</button>
-        </div>
+        <button
+          className="filter-btn"
+          onClick={() => {
+            const topRated = listOfRestaurants.filter(
+              (res) => res.info.avgRating > 4.2
+            );
+            setFilteredRestaurants(topRated);
+          }}
+        >
+          Top Rated Restaurants
+        </button>
       </div>
 
       <div className="res-container">
-        {filteredRestaurants.map((restaurant, index) => (
-          <RestaurantCard key={index} resData={restaurant} />
-        ))}
-      </div>
+  {filteredRestaurants.map((restaurant) => (
+    <Link
+      key={restaurant.info.id}
+      to={"/restaurants/" + restaurant.info.id}
+    >
+      <RestaurantCard resData={restaurant} />
+    </Link>
+  ))}
+</div>
+
     </div>
   );
 };
