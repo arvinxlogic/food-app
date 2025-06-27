@@ -1,9 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const User = (props) => {
 
   const [count]=useState(0);
   const [count2]=useState(1);
+
+  useEffect(()=>{
+
+  })
+
   return (
     <div className="user-card">
 <h2>Name:{props.name}</h2>
