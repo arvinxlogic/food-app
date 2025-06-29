@@ -765,7 +765,7 @@ const User = (props)=>{
     const [count2] = (0, _react.useState)(1);
     (0, _react.useEffect)(()=>{});
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "user-card",
+        className: "user-card m-4 p-4 bg-gray-100 rounded-lg",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                 children: [
