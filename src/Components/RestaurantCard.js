@@ -1,36 +1,48 @@
-// RestaurantCard.js
-import { Image_CDN } from "../utils/constant";
+import { useContext } from "react";
+import { CDN_URL } from "../utils/constants";
+import UserContext from "../utils/UserContext";
 
-const RestaurantCard = ({ resData }) => {
-  const { cloudinaryImageId, name, avgRating, cuisines, costForTwo } =
-    resData?.info;
-  const deliveryTime = resData?.info.sla.deliveryTime;
+const RestaurantCard = (props) => {
+  const { resData } = props;
+  const { loggedInUser } = useContext(UserContext);
+
+  const {
+    cloudinaryImageId,
+    name,
+    avgRating,
+    cuisines,
+    costForTwo,
+    sla,
+  } = resData?.info || {};
 
   return (
-    <div className="relative m-4 p-4 w-[250px] rounded-lg bg-gray-200 hover:bg-gray-300 shadow-md transition">
+    <div
+      data-testid="resCard"
+      className="m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-200"
+    >
       <img
         className="rounded-lg"
-        alt="res-logos"
-        src={Image_CDN + cloudinaryImageId}
+        alt="res-logo"
+        src={CDN_URL + cloudinaryImageId}
       />
-
-      <h3 className="font-bold py-2 text-lg">{name}</h3>
-      <h3>{avgRating} ⭐</h3>
-      <h3>{cuisines.join(", ")}</h3>
-      <h3>{costForTwo}</h3>
-      <h3>{deliveryTime} minutes</h3>
+      <h3 className="font-bold py-4 text-lg">{name}</h3>
+      <h4>{cuisines?.join(", ")}</h4>
+      <h4>{avgRating} stars</h4>
+      <h4>₹{costForTwo / 100} FOR TWO</h4>
+      <h4>{sla?.deliveryTime} minutes</h4>
+      <h4>User: {loggedInUser}</h4>
     </div>
   );
 };
 
-// Higher Order Component for adding 'Promoted' label
+// Higher Order Component - Fixed spelling here
 export const withPromotedLabel = (RestaurantCard) => {
   return (props) => {
     return (
       <div className="relative">
-        <div className="absolute top-2 left-2 bg-yellow-400 text-black px-2 py-1 text-xs font-semibold rounded shadow-md z-10">
+        <label className="absolute bg-black text-white m-2 p-2 rounded-lg">
           Promoted
-        </div>
+        </label>
         <RestaurantCard {...props} />
       </div>
     );

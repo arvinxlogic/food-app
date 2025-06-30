@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { LOGO_URL } from "../utils/constant";
+import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 const Header = () => {
