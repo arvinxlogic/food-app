@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useState } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
@@ -17,7 +17,13 @@ const About = lazy(() => import("./Components/About"));
 
 const AppLayout = () => {
   const [userName, setUserName] = useState("");
+ useEffect(()=>{
+  const data={
+    name:"Arvin",
 
+  };
+  setUserName(data.name);
+ },[])
   return (
     <Provider store={appStore}>
       <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>

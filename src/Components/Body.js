@@ -20,6 +20,7 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
     );
 
+    //
     const json = await data.json();
 
     const restaurants = json?.data?.cards.find(
@@ -78,6 +79,14 @@ const Body = () => {
           Top Rated Restaurants
         </button>
           </div>
+           <div className="search m-4 p-4 flex items-center">
+          <label>UserName : </label>
+          <input
+            className="border border-black p-2"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+        </div>
       </div>
 
       <div className="flex-wrap  flex">
