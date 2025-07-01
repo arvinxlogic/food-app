@@ -683,6 +683,8 @@ var _user = require("./User");
 var _userDefault = parcelHelpers.interopDefault(_user);
 var _userClass = require("./UserClass");
 var _userClassDefault = parcelHelpers.interopDefault(_userClass);
+var _userContext = require("../utils/UserContext");
+var _userContextDefault = parcelHelpers.interopDefault(_userContext);
 class About extends (0, _reactDefault.default).Component {
     constructor(props){
         super(props);
@@ -699,14 +701,37 @@ class About extends (0, _reactDefault.default).Component {
                     children: "about"
                 }, void 0, false, {
                     fileName: "src/Components/About.js",
-                    lineNumber: 18,
+                    lineNumber: 19,
+                    columnNumber: 7
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    children: [
+                        "LoggedInUser",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userContextDefault.default).Consumer, {
+                            children: ({ loggedInUser })=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                                    className: "text-xl font-bold",
+                                    children: loggedInUser
+                                }, void 0, false, {
+                                    fileName: "src/Components/About.js",
+                                    lineNumber: 23,
+                                    columnNumber: 30
+                                }, this)
+                        }, void 0, false, {
+                            fileName: "src/Components/About.js",
+                            lineNumber: 22,
+                            columnNumber: 9
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Components/About.js",
+                    lineNumber: 20,
                     columnNumber: 7
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                     children: "This is Namaste React web series"
                 }, void 0, false, {
                     fileName: "src/Components/About.js",
-                    lineNumber: 19,
+                    lineNumber: 27,
                     columnNumber: 7
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userClassDefault.default), {
@@ -714,7 +739,7 @@ class About extends (0, _reactDefault.default).Component {
                     location: "jalandhar"
                 }, void 0, false, {
                     fileName: "src/Components/About.js",
-                    lineNumber: 20,
+                    lineNumber: 28,
                     columnNumber: 5
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userClassDefault.default), {
@@ -722,7 +747,7 @@ class About extends (0, _reactDefault.default).Component {
                     location: "america"
                 }, void 0, false, {
                     fileName: "src/Components/About.js",
-                    lineNumber: 21,
+                    lineNumber: 29,
                     columnNumber: 5
                 }, this)
             ]
@@ -745,7 +770,7 @@ exports.default = About; // const About = () => {
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","./User":"g4p8y","./UserClass":"5SB9y","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"g4p8y":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","./User":"g4p8y","./UserClass":"5SB9y","../utils/UserContext":"8LxkN","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"g4p8y":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$65d9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$65d9.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
