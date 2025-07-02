@@ -9,8 +9,8 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  const RestaurantCardPromoted=withPromotedLabel(RestaurantCard);
-  console.log("body",listOfRestaurants);
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+  console.log("body", listOfRestaurants);
   useEffect(() => {
     fetchData();
   }, []);
@@ -20,7 +20,7 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
     );
 
-    //
+    
     const json = await data.json();
 
     const restaurants = json?.data?.cards.find(
@@ -43,7 +43,7 @@ const Body = () => {
       <div className="filter flex">
         <div className="search m-4 p-4">
           <input
-          className="border border-solid border-black rounded-sm"
+            className="border border-solid border-black rounded-sm"
             type="text"
             onChange={(e) => {
               setSearchText(e.target.value);
@@ -64,22 +64,21 @@ const Body = () => {
             Search
           </button>
         </div>
-<div className="search m-4 p-4 flex items-center">
-
-        <button
-          className="px-4 py-2 m-4
+        <div className="search m-4 p-4 flex items-center">
+          <button
+            className="px-4 py-2 m-4
              bg-blue-300 rounded-lg"
-          onClick={() => {
-            const topRated = listOfRestaurants.filter(
-              (res) => res.info.avgRating > 4.2
-            );
-            setFilteredRestaurants(topRated);
-          }}
+            onClick={() => {
+              const topRated = listOfRestaurants.filter(
+                (res) => res.info.avgRating > 4.2
+              );
+              setFilteredRestaurants(topRated);
+            }}
           >
-          Top Rated Restaurants
-        </button>
-          </div>
-           <div className="search m-4 p-4 flex items-center">
+            Top Rated Restaurants
+          </button>
+        </div>
+        <div className="search m-4 p-4 flex items-center">
           <label>UserName : </label>
           <input
             className="border border-black p-2"
@@ -95,10 +94,11 @@ const Body = () => {
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
           >
-            {restaurant.info.promoted ? (<RestaurantCardPromoted resData={restaurant}/>
-            ):
-            (<RestaurantCard resData={restaurant}/>
-          )}
+            {restaurant.info.promoted ? (
+              <RestaurantCardPromoted resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
             {/* <RestaurantCard resData={restaurant} /> */}
           </Link>
         ))}

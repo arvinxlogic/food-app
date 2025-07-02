@@ -10,7 +10,8 @@ const RestaurantMenu = () => {
   const [showIndex, setShowIndex] = useState(null);
 
   if (loading) return <Shimmer />;
-  if (error) return <div className="text-center py-8">Error loading menu: {error}</div>;
+  if (error)
+    return <div className="text-center py-8">Error loading menu: {error}</div>;
   if (!resInfo) return <Shimmer />; // Fallback loading state
 
   const { name, cuisines, costForTwoMessage } =
@@ -22,7 +23,7 @@ const RestaurantMenu = () => {
         c.card?.["card"]?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     ) || [];
-    console.log(categories);
+  console.log(categories);
 
   return (
     <div className="text-center">
@@ -30,7 +31,7 @@ const RestaurantMenu = () => {
       <p className="font-bold text-lg">
         {cuisines?.join(", ")} - {costForTwoMessage}
       </p>
-      
+
       {categories.map((category, index) => (
         <RestaurantCategory
           key={category?.card?.card?.title || index}

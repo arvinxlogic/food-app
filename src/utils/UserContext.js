@@ -1,8 +1,8 @@
-import { createContext } from 'react';
+import { createContext } from "react";
 
 const UserContext = createContext({
   loggedInUser: "Default User",
-  setLoggedInUser: () => {} // Add setter function
+  setLoggedInUser: () => {}, // Add setter function
 });
 
 export default UserContext;
