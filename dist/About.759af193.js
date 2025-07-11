@@ -799,27 +799,27 @@ const User = (props)=>{
                 ]
             }, void 0, true, {
                 fileName: "src/Components/User.js",
-                lineNumber: 14,
-                columnNumber: 1
+                lineNumber: 11,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                 children: "Location:Dehradun"
             }, void 0, false, {
                 fileName: "src/Components/User.js",
-                lineNumber: 15,
-                columnNumber: 1
+                lineNumber: 12,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
                 children: "Contact:@akshaymarch7"
             }, void 0, false, {
                 fileName: "src/Components/User.js",
-                lineNumber: 16,
-                columnNumber: 1
+                lineNumber: 13,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Components/User.js",
-        lineNumber: 13,
+        lineNumber: 10,
         columnNumber: 5
     }, undefined);
 };
@@ -882,8 +882,8 @@ class UserClass extends (0, _reactDefault.default).Component {
                     src: avatar_url
                 }, void 0, false, {
                     fileName: "src/Components/UserClass.js",
-                    lineNumber: 36,
-                    columnNumber: 6
+                    lineNumber: 34,
+                    columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                     children: [
@@ -892,7 +892,7 @@ class UserClass extends (0, _reactDefault.default).Component {
                     ]
                 }, void 0, true, {
                     fileName: "src/Components/UserClass.js",
-                    lineNumber: 37,
+                    lineNumber: 35,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -902,20 +902,20 @@ class UserClass extends (0, _reactDefault.default).Component {
                     ]
                 }, void 0, true, {
                     fileName: "src/Components/UserClass.js",
-                    lineNumber: 38,
+                    lineNumber: 36,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
                     children: "Contact:@akshaymarch7"
                 }, void 0, false, {
                     fileName: "src/Components/UserClass.js",
-                    lineNumber: 39,
+                    lineNumber: 37,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/Components/UserClass.js",
-            lineNumber: 35,
+            lineNumber: 33,
             columnNumber: 7
         }, this);
     }
